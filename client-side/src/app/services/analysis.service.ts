@@ -3,12 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AnalysisRequest, AnalysisResult, Analysis } from '../models/analysis.model';
 import { AuthService } from './auth.service';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnalysisService {
-  private apiUrl = 'https://localhost:44371/api/analysis';
+  private apiUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 

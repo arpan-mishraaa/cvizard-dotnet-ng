@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { LoginRequest, RegisterRequest, AuthResponse } from '../models/user.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:44371/api';
+  private apiUrl = environment.apiBaseUrl;
   private tokenSubject = new BehaviorSubject<string | null>(localStorage.getItem('token'));
   private userIdSubject = new BehaviorSubject<number | null>(
     localStorage.getItem('userId') ? parseInt(localStorage.getItem('userId')!) : null
