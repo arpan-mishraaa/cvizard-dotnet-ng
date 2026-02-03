@@ -22,7 +22,6 @@ Server_Side/obj/
 *.user
 
 # Configuration files with sensitive data
-Server_Side/appsettings.json
 Server_Side/appsettings.Development.json
 Server_Side/appsettings.Production.json
 
